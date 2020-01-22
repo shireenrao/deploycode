@@ -1,0 +1,2 @@
+app_dir: "/opt/apps"
+source_dir: "{{ inventory_dir }}/src/"

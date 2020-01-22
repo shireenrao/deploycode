@@ -1,0 +1,4 @@
+###
+# sync files under src to target folder on server
+##
+- import_tasks: syncsource.yml

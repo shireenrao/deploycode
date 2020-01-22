@@ -1,0 +1,9 @@
+###
+# This playbook deploys the entire directory structure under src to 
+# a target directory on the target machine
+##
+- name: Copy all files under src to target folder on server
+  hosts: common
+  user: ubuntu
+  roles:
+    - common

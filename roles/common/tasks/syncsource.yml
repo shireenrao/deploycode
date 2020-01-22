@@ -1,0 +1,22 @@
+###
+# Sync the directories under src
+# Set permissions properly
+##
+- name: synchronize app
+  synchronize: 
+    src: "{{ source_dir }}"
+    dest: "{{ app_dir }}"
+    rsync_opts:
+      - "--exclude=.git"
+      - "--exclude=__pycache__"
+  become: true
+
+- name: change ownership and group
+  file:
+    path: "{{ app_dir }}"
+    state: directory
+    recurse: yes
+    owner: root
+    group: root
+    mode: 0755
+  become: true
